@@ -180,7 +180,7 @@
                 @foreach($plugs->slice(0, 3) as $key => $plug)
                 <div class="col-xs-12 col-md-4" id="new-blogs">
                     <div class="thumbnail custom-thumbnail">
-                        <img src="{{$plug->image}}" alt="{{$plug->title}}">
+                        <img src="/storage/{{$plug->image}}" alt="{{$plug->title}}">
                         <div class="caption">
                             <h4>{{$plug->title}}</h4>
                             <p>{{$plug->head}}</p>

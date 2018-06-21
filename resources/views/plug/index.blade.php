@@ -31,7 +31,7 @@
                     <div id="blog-summary" class="col-xs-12">
                         <div class="media custom-media">
                             <div class="media-middle media-left">
-                            <a href="#">
+                            <a href="/plugs/{{$plug->id}}">
                                 <img class="media-object" src="/storage/{{$plug->image}}" alt="{{$plug->title}}">
                             </a>
                             </div>

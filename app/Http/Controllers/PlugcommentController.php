@@ -75,7 +75,7 @@ class PlugcommentController extends Controller
      */
     public function edit(Plugcomment $plugcomment)
     {
-        //
+        
     }
 
     /**
