@@ -67,7 +67,7 @@
                             <li class="list-group-item">
                                <div> <a href="">{{$comment->user->name}}</a> <strong>{{\Carbon\Carbon::parse($comment->created_at)->diffForHumans()}}</strong> </div>
 
-                                <a href="#" onclick="event.preventDefault();
+                                <a href="#delete-form" onclick="event.preventDefault();
                                     var del= confirm('Are you sure that you want to delete Comment no{{$comment->id}}?');
                                     if(del==true){
                                         document.getElementById('delete-form').submit();}">
@@ -77,17 +77,23 @@
                                     {{csrf_field()}}
                                     {{method_field('DELETE')}}
                                 </form>
+                                {{$comment->comment}}
 
-                                <a href="#" onclick="event.preventDefault();
-                                        document.getElementById('edit-form').submit();}">
+                                <a href="#edit-form" onclick="event.preventDefault();
+                                        document.getElementById('edit-form').style.display='block';}">
                                         <i class="fa fa-pencil"></i>
                                 </a>
                                 <form id="edit-form" action="{{route('plugcomments.edit',$comment->id)}}" method="POST" style="display:none;">
                                     {{csrf_field()}}
                                     {{method_field('PUT')}}
+                                    <div class="input-group row ">
+                                        <input type="text" id="plugcomment" name="plugcomment" class="form-control" value="{{old('comment')}}">
+                                        <span class="input-group-btn">
+                                            <button type="submit" class="btn btn-defualt"><i class="fa fa-angle-double-left"></i></button>
+                                        </span>
+                                    </div>
                                 </form>
 
-                                {{$comment->comment}}
                             </li>
                             @endforeach
                             <li class="list-group-item">

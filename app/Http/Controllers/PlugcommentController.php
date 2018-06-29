@@ -75,7 +75,9 @@ class PlugcommentController extends Controller
      */
     public function edit(Plugcomment $plugcomment)
     {
-        
+        $plugcomments = Plug::find($plugcomment);
+        $action = route('plugcomments.update',['id'=>$plugcomment]);
+        return back();
     }
 
     /**
@@ -108,7 +110,7 @@ class PlugcommentController extends Controller
     private function plugCommentValidator(array $request)
     {
         return Validator::make($request,[
-            'comment'      => 'required|max:150',
+            'comment'      => 'required|max:100'
             
         ],[
             'comment.required' => 'الرجاء ادخال نص  تعليق',
